@@ -1,0 +1,128 @@
+.auth-layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  gap: var(--space-8);
+  padding: var(--space-6) var(--space-4);
+}
+
+.auth-layout__brand {
+  display: none;
+}
+
+.auth-layout__card {
+  width: 100%;
+  max-width: 26rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: var(--space-8) var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.auth-layout__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.auth-layout__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--color-ink);
+}
+
+.auth-layout__subtitle {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dot--red {
+  background: var(--color-red);
+}
+
+.dot--blue {
+  background: var(--color-blue);
+}
+
+.dot--green {
+  background: var(--color-green);
+}
+
+@media (min-width: 900px) {
+  .auth-layout {
+    grid-template-columns: 1fr 1fr;
+    padding: var(--space-8);
+  }
+
+  .auth-layout__brand {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    justify-self: end;
+    max-width: 26rem;
+    padding: var(--space-4) 0 var(--space-4) var(--space-6);
+  }
+
+  .auth-layout__line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-ink);
+  }
+
+  .auth-layout__line::before,
+  .auth-layout__line::after {
+    content: '';
+    position: absolute;
+    left: -5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .auth-layout__line::before {
+    top: -6px;
+    background: var(--color-red);
+  }
+
+  .auth-layout__line::after {
+    bottom: -6px;
+    background: var(--color-blue);
+  }
+
+  .auth-layout__headline {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    font-weight: 900;
+    line-height: 1.05;
+    color: var(--color-ink);
+  }
+
+  .auth-layout__tagline {
+    margin: 0;
+    font-size: var(--text-lg);
+    color: var(--color-muted);
+  }
+
+  .auth-layout__dots {
+    display: flex;
+    gap: var(--space-2);
+  }
+}
